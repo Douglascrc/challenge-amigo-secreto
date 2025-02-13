@@ -34,9 +34,20 @@ function sortearAmigo() {
         return;
     }
     // Efetivamente sorteia
-    let indexSorteado = Math.floor(Math.random * amigos.length);
+    let indexSorteado = Math.floor(Math.random() * amigos.length);
 
     // Remove o index do amigo sorteado para que ele não seja sorteado novamente
     let amigoSorteado = amigos.splice(indexSorteado,1)[0];
     document.getElementById('resultado').innerHTML = `O Amigo sorteado foi ${amigoSorteado}`;
+
+    // Lança o confetti após mostrar o resultado
+    lancarConfetti();
+}
+
+function lancarConfetti() {
+    confetti({
+        particleCount: 500, 
+        spread: 160,        
+        origin: { x: 0.5, y: 0.5 } 
+    });
 }
