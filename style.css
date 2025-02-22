@@ -2,8 +2,10 @@
     --color-primary: #4B69FD;
     --color-secondary: #FFF9EB;
     --color-tertiary: #C4C4C4;
-    --color-button: #fe652b;
-    --color-button-hover: #e55720;
+    --color-button: #fe2e2be7;
+    --color-button-hover: #fe2e2b;
+    --color-button-sort:#05df05d7;
+    --color-button-sort-hover:#05DF05;
     --color-text: #444444;
     --color-white: #FFFFFF;
 }
@@ -88,6 +90,9 @@ body {
 }
 
 .button-container {
+    display: flex;
+    gap: 10px;
+    flex-direction: row;
     width: 300px;
     justify-content: center;
 }
@@ -128,7 +133,7 @@ button {
 /* Listas */
 ul {
     list-style-type: none;
-    color: var(--color-text);
+    color: var(--color-primary);
     font-family: "Inter", sans-serif;
     font-size: 18px;
     margin: 20px 0;
@@ -148,15 +153,25 @@ ul {
     align-items: center;
     width: 100%;
     padding: 10px 40px;
-    color: var(--color-white);
-    background-color: var(--color-button);
     font-size: 16px;
+}
+
+#button-sort {
+    background-color: var(--color-button-sort);
+}
+
+#button-clean {
+    background-color: var(--color-button);
 }
 
 .button-draw img {
     margin-right: 40px;
 }
 
-.button-draw:hover {
+#button-sort:hover {
+    background-color: var(--color-button-sort-hover);
+}
+
+#button-clean:hover {
     background-color: var(--color-button-hover);
 }
