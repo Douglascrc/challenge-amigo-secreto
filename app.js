@@ -22,9 +22,21 @@ function adicionarAmigo() {
     // Adiciona um novo amigo a ser sorteado.
     amigos.push(amigoValor);
     document.getElementById('amigo').value = '';
-    document.getElementById('listaAmigos').innerHTML = amigos;
     console.log(amigos);
 
+    const listaAmigos = document.getElementById('listaAmigos');
+    listaAmigos.innerHTML = '';
+
+    amigos.forEach(amigo => {
+        const li = document.createElement('li');
+        li.textContent = amigo;
+        listaAmigos.appendChild(li);
+     });
+}
+
+function limparLista(){
+    document.getElementById('listaAmigos').innerHTML = '';
+    amigos = [];
 }
 
 function sortearAmigo() {
@@ -42,6 +54,7 @@ function sortearAmigo() {
 
     // Lança o confetti após mostrar o resultado
     lancarConfetti();
+    
 }
 
 function lancarConfetti() {
