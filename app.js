@@ -7,7 +7,7 @@
 let amigos = [];
 
 function adicionarAmigo() {
-    let amigoValor = document.getElementById('amigo').value;
+    let amigoValor = document.getElementById('amigo').value.trim().toLowerCase();
 
     // Verifica se o input não está vázio
     if(amigoValor === '') {
